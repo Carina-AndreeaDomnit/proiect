@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Carina-Andreea Domnit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Carina-Andreea Domnit</h1>
+    </header>
+
+    <main>
+        <!-- Secțiunea de imagini -->
+        <section id="poze">
+            <h2>Poze</h2>
+            
+            <img src="images/image1.jpg" alt="Camioane parcate">
+            <p>Sursă: <a href="https://unsplash.com/photos/a-group-of-trucks-parked-in-front-of-a-building-rWvyc9S_laY" target="_blank">Unsplash</a></p>
+            
+            <img src="images/image2.jpg" alt="Clădire modernă">
+            <p>Sursă: <a href="https://pixabay.com/photos/architecture-skyscraper-city-1868667/" target="_blank">Pixabay</a></p>
+        </section>
+
+        <!-- Secțiunea de link-uri -->
+        <section id="linkuri">
+            <h2>Link-uri</h2>
+            <h3>Link-uri interne</h3>
+            <ul>
+                <li><a href="#poze">Poze</a></li>
+                <li><a href="#cv">CV-ul meu</a></li>
+                <li><a href="#contact">Formular de contact</a></li>
+                <li><a href="#linkuri">Secțiunea de link-uri</a></li>
+            </ul>
+            <h3>Link-uri externe</h3>
+            <ul>
+                <li><a href="https://www.google.com" target="_blank">Google</a></li>
+                <li><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://europa.eu/europass/ro/create-europass-cv" target="_blank">Europass CV</a></li>
+            </ul>
+        </section>
+
+        <!-- Secțiunea CV -->
+        <section id="cv">
+            <h2>CV-ul Meu</h2>
+            <p>Descărcați CV-ul meu în format EuroPass:</p>
+            <a href="cv/CV_EuroPass.pdf" download>Descarcă CV</a>
+        </section>
+
+        <!-- Formular de contact -->
+        <section id="contact">
+            <h2>Formular de Contact</h2>
+            <form id="contactForm">
+                <label for="name">Nume:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" required></textarea><br><br>
+                
+                <button type="submit">Trimite</button>
+            </form>
+            <p id="status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Carina-Andreea Domnit</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Preia datele din formular
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Construiește link-ul mailto
+            const mailtoLink = `mailto:domnitc7@yahoo.com?subject=Mesaj de la ${name}&body=${encodeURIComponent(message)}`;
+
+            // Deschide link-ul mailto
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
